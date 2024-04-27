@@ -17,7 +17,7 @@ function App() {
     let timer: ReturnType<typeof setTimeout>;
     if (isSubmitted) {
       timer = setTimeout(() => {
-        // setIsSubmitted(false);
+        setIsSubmitted(false);
       }, 2000);
     }
     return () => {
