@@ -8,8 +8,11 @@ import { ThankYou } from './components/thankYou/thankyou';
 
 function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [initialValues, setInitialValues] = useState({ email: "" });
 
-  const handleFormSubmit = () => {
+
+  const handleFormSubmit = (values: { email: string }) => {
+    setInitialValues(values);
     setIsSubmitted(true);
   };
 
@@ -26,7 +29,7 @@ function App() {
   }, [isSubmitted]);
 
   if (isSubmitted) {
-    return <ThankYou />;
+    return <ThankYou initialValues={initialValues} />;
   }
 
   return (
@@ -36,7 +39,7 @@ function App() {
       </div>
       <div className="col-md-6 order-md-1 mt-5 mt-md-0 p-5">
         <Updated />
-        <FormField onSubmit={handleFormSubmit} />
+        <FormField onSubmit={handleFormSubmit} initialValues={initialValues} />
       </div>
     </NewsLetterLayout>
   );

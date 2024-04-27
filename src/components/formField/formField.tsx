@@ -4,13 +4,10 @@ import * as yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { FormFieldProps } from "../utils/schemas";
 
-export const FormField = ({ onSubmit }: FormFieldProps) => {
+export const FormField = ({ onSubmit, initialValues }: FormFieldProps) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const formRef = useRef<any>();
 
-    const initialValues = {
-        email: "",
-    };
     const validationSchema = yup.object().shape({
         email: yup.string().label("Email").required(),
     });
@@ -22,6 +19,7 @@ export const FormField = ({ onSubmit }: FormFieldProps) => {
             validationSchema={validationSchema}
             onSubmit={onSubmit}
             validateOnBlur={false}
+
         >
             {({ handleSubmit, errors, touched }) => {
                 return (
