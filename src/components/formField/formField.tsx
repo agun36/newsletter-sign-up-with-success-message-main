@@ -19,9 +19,11 @@ export const FormField = ({ onSubmit, initialValues }: FormFieldProps) => {
             validationSchema={validationSchema}
             onSubmit={onSubmit}
             validateOnBlur={false}
+            onReset={() => formRef.current.resetForm()}
 
         >
-            {({ handleSubmit, errors, touched }) => {
+            {({ handleSubmit, errors, touched
+            }) => {
                 return (
                     <Form onSubmit={handleSubmit} className="row mt-5 justify-content-center">
                         <div className=" col-md-12 form-name row  ">
@@ -41,7 +43,8 @@ export const FormField = ({ onSubmit, initialValues }: FormFieldProps) => {
 
                         </div>
                         <div className="form-group col-md-12">
-                            <button type="submit" className="p-5 btn bg-grey-000 text-white-000 font-size-medium w-100">
+                            <button type="submit"
+                                className="p-5 btn bg-grey-000 text-white-000 font-size-medium w-100">
                                 subscribe to monthly newsletter
                             </button>
                         </div>

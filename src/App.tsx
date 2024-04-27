@@ -11,9 +11,10 @@ function App() {
   const [initialValues, setInitialValues] = useState({ email: "" });
 
 
-  const handleFormSubmit = (values: { email: string }) => {
+  const handleFormSubmit = (values: { email: string }, { resetForm: resetForm }: { resetForm: () => void }) => {
     setInitialValues(values);
     setIsSubmitted(true);
+    resetForm();
   };
 
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
     if (isSubmitted) {
       timer = setTimeout(() => {
         setIsSubmitted(false);
+        setInitialValues({ email: "" })
       }, 2000);
     }
     return () => {
