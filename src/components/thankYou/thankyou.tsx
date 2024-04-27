@@ -14,7 +14,9 @@ export const ThankYou = () => {
                 <p className="mb-5 text-grey-001 opacity-75">A confirmation email has been sent to you.</p>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={() => setShowModal(false)}>
+                <Button variant="tomatoe" onClick={() => setShowModal(false)}
+                    className='w-100 p-5 font-size-medium text-white-000'
+                >
                     Close
                 </Button>
             </Modal.Footer>
