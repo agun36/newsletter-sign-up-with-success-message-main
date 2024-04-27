@@ -1,0 +1,18 @@
+@import '../../assets/styles/variables';
+
+form {
+
+    // Change border color
+    .form-control {
+        border-color: $grey-002;
+
+        &:focus {
+            border-color: $grey-002;
+            box-shadow: 0 0 0 rgba(0, 255, 0, .25);
+        }
+
+        &::placeholder {
+            color: $grey-002;
+        }
+    }
+}
