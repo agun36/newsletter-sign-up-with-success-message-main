@@ -9,7 +9,7 @@ export const FormField = ({ onSubmit, initialValues }: FormFieldProps) => {
     const formRef = useRef<any>();
 
     const validationSchema = yup.object().shape({
-        email: yup.string().label("Email").required(),
+        email: yup.string().label("Email").email().required(),
     });
 
     return (
@@ -33,6 +33,7 @@ export const FormField = ({ onSubmit, initialValues }: FormFieldProps) => {
                                 </label>
                                 <ErrorMessage name="email" component="div" className="text-danger" />
                                 {
+                                    // Only show success message if email field is touched and there are no errors
                                     touched.email && !errors.email && <span className="text-success">Looks good!</span>
                                 }
                             </div>
