@@ -8,12 +8,13 @@ import { ThankYou } from './components/thankYou/thankyou';
 
 function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [initialValues, setInitialValues] = useState({ email: "" });
+  const [formValues, setFormValues] = useState({ email: "" }); // State for form input
+  const [submittedValues, setSubmittedValues] = useState({ email: "" }); // State for submitted values
 
-
-  const handleFormSubmit = (values: { email: string }, { resetForm: resetForm }: { resetForm: () => void }) => {
-    setInitialValues(values);
+  const handleFormSubmit = (values: { email: string }, { resetForm }: { resetForm: () => void }) => {
+    setSubmittedValues(values); // Set submitted values
     setIsSubmitted(true);
+    setFormValues({ email: "" }); // Reset form input
     resetForm();
   };
 
@@ -22,8 +23,7 @@ function App() {
     if (isSubmitted) {
       timer = setTimeout(() => {
         setIsSubmitted(false);
-        setInitialValues({ email: "" })
-      }, 2000);
+      }, 4000);
     }
     return () => {
       clearTimeout(timer);
@@ -31,7 +31,7 @@ function App() {
   }, [isSubmitted]);
 
   if (isSubmitted) {
-    return <ThankYou initialValues={initialValues} />;
+    return <ThankYou initialValues={submittedValues} />; // Pass submitted values to ThankYou
   }
 
   return (
@@ -41,7 +41,7 @@ function App() {
       </div>
       <div className="col-md-6 order-md-1 mt-5 mt-md-0 p-5">
         <Updated />
-        <FormField onSubmit={handleFormSubmit} initialValues={initialValues} />
+        <FormField onSubmit={handleFormSubmit} initialValues={formValues} />
       </div>
     </NewsLetterLayout>
   );

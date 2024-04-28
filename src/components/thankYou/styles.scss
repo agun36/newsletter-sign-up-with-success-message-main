@@ -1,10 +1,33 @@
+@import '../../assets/styles/variables.scss';
+
 .modals {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    min-height: 100vh !important;
+    background-color: $grey-000 !important;
+    min-height: 100vh;
 
-    .modal {
-        &.modal-dialog {}
+    .modal-container {
+        background-color: $white-000;
+        padding: 2rem 4rem;
+        width: 46rem; // Adjusted width
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+
+        .button-hover {
+            background-color: $grey-000;
+            color: $white-000;
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-style: normal;
+            border-radius: 1rem;
+
+            &:hover {
+                background-color: $tomatoe;
+            }
+        }
+
     }
 }

@@ -37,14 +37,14 @@ export const FormField = ({ onSubmit, initialValues }: FormFieldProps) => {
                                 }
                             </div>
                             <Field
-                                className={` p-5 mt-4 mb-4 form-control ${touched.email && errors.email ? 'is-invalid' : touched.email && !errors.email ? 'is-valid' : ''}`} type="email" name="email"
+                                className={`rounded-3 p-5 mt-4 mb-4 form-control ${touched.email && errors.email ? 'is-invalid' : touched.email && !errors.email ? 'is-valid' : ''}`} type="email" name="email"
                                 placeholder="pVfKU@example.com"
                             />
 
                         </div>
                         <div className="form-group col-md-12">
                             <button type="submit"
-                                className="p-5 btn bg-grey-000 text-white-000 font-size-medium w-100">
+                                className="p-5 btn bg-grey-000 text-white-000 font-size-medium w-100 rounded-3">
                                 subscribe to monthly newsletter
                             </button>
                         </div>
