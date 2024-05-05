@@ -25,8 +25,8 @@ export const FormField = ({ onSubmit, initialValues }: FormFieldProps) => {
             {({ handleSubmit, errors, touched
             }) => {
                 return (
-                    <Form onSubmit={handleSubmit} className="row mt-5 justify-content-center">
-                        <div className=" col-md-12 form-name row  ">
+                    <Form onSubmit={handleSubmit} className=" mt-5 justify-content-center">
+                        <div className=" form-name  ">
                             <div className="d-flex justify-content-between align-items-center">
                                 <label htmlFor="email" className="label-name text-grey-001">
                                     Email
@@ -38,14 +38,14 @@ export const FormField = ({ onSubmit, initialValues }: FormFieldProps) => {
                                 }
                             </div>
                             <Field
-                                className={`rounded-3 p-5 mt-4 mb-4 form-control ${touched.email && errors.email ? 'is-invalid' : touched.email && !errors.email ? 'is-valid' : ''}`} type="email" name="email"
+                                className={`rounded-3 p-3 mt-4 mb-4 form-control ${touched.email && errors.email ? 'is-invalid' : touched.email && !errors.email ? 'is-valid' : ''}`} type="email" name="email"
                                 placeholder="pVfKU@example.com"
                             />
 
                         </div>
-                        <div className="form-group col-md-12">
+                        <div className="form-group">
                             <button type="submit"
-                                className="p-5 btn bg-grey-000 text-white-000 font-size-medium w-100 rounded-3">
+                                className="p-3 btn bg-grey-000 text-white-000 font-size-medium w-100 rounded-3">
                                 subscribe to monthly newsletter
                             </button>
                         </div>
